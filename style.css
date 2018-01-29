@@ -28,7 +28,7 @@ html, body{
   text-align: center;
   margin-bottom: 0;
 }
-.calc-field input[type="text"]{
+.calc-field input[type="text"],input[type="number"]{
   width: 80%;
   margin-left: 10%;
   margin-bottom: 0.5em;

@@ -6,57 +6,58 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
   </head>
   <body>
     <section><!--calculator starts here-->
-      <div class="container calc-panel">
+      <div class="container calc-panel" ng-app="">
         <div class="row">
           <h2>Cost</h2>
         </div>
         <div class="row">
           <div class="col-md-3 calc-field right-border bottom-border">
             <h3>Auction Price</h3>
-            <input type="text" >
+            <input type="number" name="auction_price" ng-model="auction_price">
           </div>
           <div class="col-md-3 calc-field right-border bottom-border">
             <h3>Auction Charges</h3>
-            <input type="text" >
+            <input type="number" name="auction_charges" ng-model="auction_charges" >
           </div>
           <div class="col-md-3 calc-field right-border bottom-border">
             <h3>Shipping Charge</h3>
-            <input type="text" >
+            <input type="number" name="shipping_price" ng-model="shipping_price" >
           </div>
           <div class="col-md-3 calc-field bottom-border">
             <h3>Transport to the Port</h3>
-            <input type="text" >
+            <input type="number" name="transport_price" ng-model="transport_price">
           </div>
         </div>
         <div class="row">
           <div class="col-md-3 calc-field right-border bottom-border">
             <h3>Inspection</h3>
-            <input type="text" >
+            <input type="number" name="inspection_price" ng-model="inspection_price" >
           </div>
           <div class="col-md-3 calc-field right-border bottom-border">
             <h3>Insuarance</h3>
-            <input type="text" >
+            <input type="number" name="insuarance_price" ng-model="insuarance_price" >
           </div>
           <div class="col-md-3 calc-field right-border bottom-border">
             <h3>Photo</h3>
-            <input type="text" >
+            <input type="number" name="photo_price" ng-model="photo_price" >
           </div>
           <div class="col-md-3 calc-field bottom-border">
             <h3>Freight</h3>
-            <input type="text" >
+            <input type="number" name="freight_price" ng-model="freight_price" >
           </div>
         </div>
         <div class="row">
           <div class="col-md-3 calc-field right-border bottom-border">
             <h3>Excia</h3>
-            <input type="text" >
+            <input type="number" name="excia_price" ng-model="excia_price" >
           </div>
           <div class="col-md-3 calc-field right-border bottom-border">
             <h3>Extra Cost</h3>
-            <input type="text" >
+            <input type="number" name="extra_price" ng-model="extra_price" >
           </div>
           <div class="col-md-3 calc-field right-border bottom-border">
 
@@ -85,16 +86,16 @@
         </div>
         <div class="row">
           <div class="col-md-3 calc-last-field right-border bottom-border">
-            <h3>FOB (¥)</h3>
+            <h3>FOB (¥ {{auction_price + transport_price + photo_price + excia_price| number}})</h3>
           </div>
           <div class="col-md-3 calc-last-field right-border bottom-border">
-            <h3>FOB ($)</h3>
+            <h3>FOB (${{(auction_price + transport_price + photo_price + inspection_price + shipping_price + freight_price + insuarance_price + excia_price)/100 | number}})</h3>
           </div>
           <div class="col-md-3 calc-last-field right-border bottom-border">
-            <h3>CIF (¥)</h3>
+            <h3>CIF (¥ {{auction_price + transport_price + photo_price + inspection_price + shipping_price + freight_price + insuarance_price + excia_price | number}})</h3>
           </div>
           <div class="col-md-3 calc-last-field bottom-border">
-            <h3>FOB ($)</h3>
+            <h3>FOB (${{(auction_price + transport_price + photo_price + inspection_price + shipping_price + freight_price + insuarance_price + excia_price)/100 | number}})</h3>
           </div>
         </div>
       </div>
