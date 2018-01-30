@@ -1,11 +1,11 @@
 html, body{
 }
 .calc-panel{
-  position: absolute;
+  position: fixed;
   margin: auto;
-  top: 0;
-  left: 0;
-  right:0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .calc-panel h2{
   background-color: #4d4d4d;
@@ -14,6 +14,13 @@ html, body{
   color: #ffffff;
   font-size: 1.4em;
   width: 100%;
+}
+.calc-panel h2 span{
+  opacity: 0.8;
+}
+.calc-panel h2 span:hover{
+  opacity: 1;
+  cursor: pointer;
 }
 .calc-field{
   margin-top: 0;
